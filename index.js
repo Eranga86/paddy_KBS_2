@@ -232,5 +232,13 @@ GROUP BY ?disease ?diseaseName ?overallSymptoms ?primarySource
 });
 
 // Start server
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Ontology backend running on port ${PORT}`));
+
+
+const PORT = process.env.PORT || 8080;
+const LIVE_URL = process.env.RAILWAY_PUBLIC_DOMAIN || `http://localhost:${PORT}`;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Live URL: ${LIVE_URL}`);
+});
+
