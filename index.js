@@ -7,8 +7,8 @@ const app = express();
 app.use(bodyParser.json());
 
 // SPARQL endpoint URLs (Fuseki dataset)
-const SPARQL_UPDATE_URL = "http://localhost:3030/paddyKBS/update";
-const SPARQL_QUERY_URL = "http://localhost:3030/paddyKBS/query";
+const SPARQL_UPDATE_URL = process.env.SPARQL_UPDATE_URL;
+const SPARQL_QUERY_URL = process.env.SPARQL_QUERY_URL;
 
 const ONTO = "http://www.semanticweb.org/veranga/ontologies/2025/5/Knowledge_Based_System_Version_5#";
 
